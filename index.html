@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Dr. Malik Muhammad Saad (PhD in Computer Science and Engineering)  | Academic Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --bg-alt: #ffffff;
+      --text: #182033;
+      --muted: #5f6b85;
+      --accent: #3a6df0;
+      --accent-2: #11a683;
+      --border: rgba(24, 32, 51, 0.08);
+      --shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+      --max-width: 1160px;
+      --hero-gradient: linear-gradient(135deg, #eef3ff 0%, #f8fbff 45%, #eefbf7 100%);
+    }
+
+    body.dark {
+      --bg: #020817;
+      --bg-alt: #0f172a;
+      --text: #edf2ff;
+      --muted: #aab7d6;
+      --accent: #82a8ff;
+      --accent-2: #65dfc0;
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+      --hero-gradient: linear-gradient(135deg, #0f1730 0%, #131d38 45%, #0d2230 100%);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 34px 0;
+    }
+
+    .card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: color-mix(in srgb, var(--bg) 84%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.96rem;
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 9px 14px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 52px 0 28px;
+    }
+
+    .hero-wrap {
+      background: var(--hero-gradient);
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .profile-box {
+      text-align: center;
+    }
+
+    .profile-photo {
+      width: 240px;
+      height: 240px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+      transform: scale(1.15);
+      border: 5px solid rgba(255,255,255,0.55);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+      background: #dfe8ff;
+    }
+
+    .photo-note {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(58, 109, 240, 0.1);
+      border: 1px solid rgba(58, 109, 240, 0.14);
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3 { margin-top: 0; }
+
+    h1 {
+      font-size: clamp(2.1rem, 4vw, 3.45rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 24px;
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.92rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: transform 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      background: var(--bg-alt);
+      color: var(--text);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .panel {
+      padding: 28px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 18px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-top: -8px;
+      margin-bottom: 20px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--accent) 8%, var(--bg-alt));
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+
+    .item-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .item {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--bg-alt);
+    }
+
+    .item h3 {
+      margin-bottom: 6px;
+      font-size: 1.08rem;
+    }
+
+    .meta {
+      color: var(--accent-2);
+      font-size: 0.94rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .publication-link,
+    .project-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: 700;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .small-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 34px 0 48px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    /* About / Skills / Research layout */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .about-left {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .about-card p {
+      margin: 0 0 20px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .skills-card {
+      padding-top: 24px;
+    }
+
+    .skill-group + .skill-group {
+      margin-top: 26px;
+    }
+
+    .skill-heading {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 8px;
+      border-bottom: 2px solid color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+
+    .skill-list {
+      margin: 0;
+      padding-left: 20px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .skill-list li {
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    .skill-list-compact {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 24px;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .grid-2,
+      .contact-grid,
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo {
+        width: 180px;
+        height: 180px;
+      }
+
+      .nav {
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .skill-list-compact {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="light">
+  <header>
+    <div class="container nav">
+      <div class="brand"> Malik Muhammad Saad (PhD)</div>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#publications">Publications</a>
+          <a href="#patents">Patents</a>
+          <a href="#book-chapters">Book Chapters</a>
+          <a href="#projects">Projects</a>
+          <a href="#editorial">Editorial Activities</a>
+          <a href="#contact">Contact</a>  
+        </nav>
+        <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+  <div class="container hero-wrap">
+    <div class="hero-grid">
+
+      <!-- LEFT SIDE (PROFILE) -->
+      <div class="profile-box">
+        <img class="profile-photo" src="Malik1-removebg-preview.png" alt="Profile photo of Malik Muhammad Saad" />
+
+        <div class="photo-note">
+          Malik Muhammad Saad (PhD in Computer Science and Engineering)
+        </div>
+
+        <!-- SOCIAL ICONS -->
+        <div class="profile-links">
+          <p> Quick Links:    </p>
+          <a href="https://scholar.google.com/citations?hl=en&user=3DnH4_gAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar">
+            <i class="fas fa-graduation-cap"></i>
+          </a>
+
+          <a href="https://github.com/maliksaad84" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/malik-saad-9172b6a1/"target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE (TEXT) -->
+      <div>
+        <div class="eyebrow">Personal Webpage</div>
+
+        <h1>AI-Driven 5G/6G V2X Researcher and Wireless Systems Engineer</h1>
+
+        <p class="lead">
+          I work on intelligent wireless systems with a focus on NR-V2X, 5G/6G communication,
+          distributed AI, vehicular networking, SDR prototyping, and next-generation mobility platforms (AI-powered Autnomous Vehicles).
+        </p>
+
+        <div class="hero-meta">
+          <span class="pill">NR-V2X / C-V2X</span>
+          <span class="pill">3GPP-Aligned Research</span>
+          <span class="pill">GNU Radio &amp; SDR</span>
+          <span class="pill">AI for Wireless Networks</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="maliksaad_cv.pdf" download>Download CV</a>
+          <a class="btn btn-secondary" href="#publications">View Publications</a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <section class="section" id="about">
+      <div class="container about-layout">
+        <div class="about-left">
+          <div class="card panel about-card">
+            <h2 class="section-title">About Me</h2>
+
+            <p>
+  <strong>Physical Embodied AI Researcher</strong> currently affiliated with the
+  <strong>CORE-AI Lab</strong>, conducting research on
+  <strong>semantically grounded world models</strong>,
+  <strong>Vision-Language Models (VLMs)</strong>,
+  <strong>Large Language Models (LLMs)</strong>,
+  <strong>Vision-Language-Action (VLA)</strong> systems,
+  <strong>reinforcement learning</strong>, and
+  <strong>embodied intelligence</strong> for autonomous vehicles and dexterous robotic manipulation.
+  Experienced in developing <strong>multimodal perception</strong>,
+  <strong>structured reasoning</strong>,
+  <strong>persistent semantic memory</strong>, and
+  <strong>reinforcement learning-based post-training</strong> techniques for
+  safety-critical AI systems.
+</p>
+
+<p>
+  Strong background in <strong>AI-driven mobility</strong> and communication systems spanning
+  <strong>5G/6G</strong>, <strong>NR-V2X</strong>,
+  <strong>distributed AI</strong>,
+  <strong>Intelligent Transportation Systems (ITS)</strong>, and
+  <strong>Connected and Cooperative Automated Vehicles (C-CAV)</strong>.
+  Proficient in <strong>software development</strong>,
+  <strong>large-scale simulation</strong>, and practical implementation of wireless communication systems using
+  <strong>Software-Defined Radios (SDRs)</strong>,
+  <strong>GNU Radio</strong>,
+  <strong>Python</strong>,
+  <strong>MATLAB</strong>,
+  <strong>MuJoCo</strong>, and
+  <strong>ns-3</strong>.
+  Experienced in <strong>Deep Reinforcement Learning (TD3, DDPG, PPO, SAC)</strong>,
+  <strong>multimodal learning</strong>,
+  <strong>representation learning</strong>, and
+  <strong>foundation model development</strong>, with expertise in translating research into deployable prototypes and experimental platforms.
+</p>
+
+<p>
+  Actively engaged in <strong>3GPP-aligned R&amp;D</strong> and
+  <strong>5GAA</strong> collaborative research, with contributions to
+  <strong>intelligent resource allocation</strong>,
+  <strong>sidelink communications</strong>,
+  <strong>vehicular networking</strong>, and
+  <strong>AI-enabled communication architectures</strong>.
+  Published research in leading <strong>IEEE journals</strong>,
+  <strong>IEEE magazines</strong>, and
+  <strong>international conferences</strong> across
+  <strong>artificial intelligence</strong>,
+  <strong>wireless communications</strong>,
+  <strong>autonomous systems</strong>, and
+  <strong>embodied AI</strong>.
+</p>
+          </div>
+
+          <div class="card panel research-card">
+            <h2 class="section-title">Research Interests</h2>
+            <div class="chips">
+              <span class="chip">Cellular Vehicle-to-Everything Communications (C-V2X / NR-V2X)</span>
+              <span class="chip">3GPP V2X Standards </span>
+              <span class="chip">Agentic AI</span>
+              <span class="chip">5G/6G Wireless Networks</span>
+              <span class="chip">MAC Layer Scheduling Protocols</span>
+              <span class="chip">Non-Terrestrial Networks</span>
+              <span class="chip">Resource Allocation</span>
+              <span class="chip">Multi-Agent Reinforcement Learning</span>
+              <span class="chip">Future 6G Mobility</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card panel skills-card">
+          <div class="skill-group">
+            <h3 class="skill-heading">Technical Skills</h3>
+            <ul class="skill-list">
+              <li><strong>Software Defined Radios (SDRs):</strong> USRPs, AntSDR, HackRF, RTL-SDR, BladeRF, Pluto SDR</li>
+              <li><strong>Embedded Systems &amp; Boards:</strong> NVIDIA Jetson Orin Nano, Raspberry Pi, PIC Microcontrollers, LoRaWAN Modules</li>
+              <li><strong>Mobile AI Platforms:</strong> Google Pixel (Tensor SoC), Snapdragon-based devices, heterogeneous computing (CPU, GPU, NPU)</li>
+              <li><strong>AI/ML:</strong> Reinforcement Learning, Deep Reinforcement Learning (DRL), LSTM, CNN, Supervised Learning, Transfer Learning</li>
+              <li><strong>Frameworks:</strong> TensorFlow, PyTorch, Scikit-learn, Matplotlib</li>
+              <li><strong>Simulation Tools:</strong> ns-3, MATLAB, SUMO, GNU Radio, CARLA, MuJoCo, Simulink, Wireshark</li>
+              <li><strong>OS/RTOS:</strong> Linux, QNX, VMware</li>
+              <li><strong>IPR:</strong> Contribution to Intellectual Property Rights</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-heading">Programming Skills</h3>
+            <ul class="skill-list skill-list-compact">
+              <li>C++</li>
+              <li>C</li>
+              <li>Python</li>
+              <li>Arduino</li>
+              <li>RESTful API, MQTT, SQL</li>
+              <li>Linux System Programming</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-heading">Domain Expertise</h3>
+            <ul class="skill-list">
+              <li>
+                C-V2X / NR-V2X, Resource Allocation, Cooperative-Connected Automated Vehicles (C-CAVs),
+                On-device AI, Edge Intelligence, Sensor Fusion, Semantics V2X Communications, NTN,
+                Network Slicing, O-RAN / AI-RAN
+              </li>
+              <li><strong>Standards:</strong> 3GPP, IEEE, ETSI, ITS, ASPICE, ISO/IEC 4200</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="experience">
+  <div class="container">
+    <div class="card panel">
+      <h2 class="section-title">Experience (8+ Years)</h2>
+      
+      <div class="item-list">
+
+        <div class="item">
+          <h3>Physical Embodied AI Researcher</h3>
+          <div class="meta">CORE-AI Lab, DGIST, Korea | February 2026 – Present</div>
+          <ul>
+            <li>Conducting research on on-device AI systems for Physical Embodied AI, focusing on efficient LLM execution under real-world hardware constraints.</li>
+            <li>Developing semantically grounded 3D world models by integrating occupancy prediction, vision-language representations, and latent memory for autonomous perception.</li>
+            <li>Designing persistent semantic memory architectures for open-vocabulary 3D scene understanding and long-horizon environmental reasoning.</li>
+            <li>Investigating latent reasoning architectures that replace language-token reasoning with latent-space inference for efficient multimodal reasoning.</li>
+            <li>Applying reinforcement learning (RL) and post-training alignment techniques to improve reasoning robustness and decision-making capabilities of foundation model.</li>
+            <li>Conducting research on multimodal learning, representation learning, autonomous systems, embodied AI, and foundation models for next-generation intelligent agents.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>Postdoctoral Researcher</h3>
+          <div class="meta">Kyungpook National University, Korea | March 2025 – January 2026</div>
+          <ul>
+            <li>Leading research on AI-driven distributed resource allocation protocols for 5G/6G NR-V2X communication systems.</li>
+            <li>Developed Agentic AI-enabled V2X frameworks for semantic extraction, reasoning, and context-aware transmission for connected autonomous vehicles.</li>
+            <li>Designed simulation and testing pipelines using GNU Radio, ns-3, and SUMO for latency-critical vehicular safety applications.</li>
+            <li>Worked with Qualcomm V2X SDK-aligned frameworks, Snapdragon automotive SoCs, QNX, Linux, CAM, DENM, and BSM messaging protocols.</li>
+            <li>Participated in 3GPP-related activities on sidelink scheduling, NR-V2X enhancements, and 6G architecture development.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>Adjunct Faculty</h3>
+          <div class="meta">Dongseo University, Busan, Korea | March 2025 – Present</div>
+          <ul>
+            <li>Delivered undergraduate courses in Operating Systems and Database Systems, covering memory management, process scheduling, SQL, relational modeling, and transaction processing.</li>
+            <li>Delivering courses on Computer Networks, Network Programming, and Programming Method.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>Research Assistant</h3>
+          <div class="meta">Wireless and Mobile Internet Laboratory, Kyungpook National University, Korea | September 2019 – February 2025</div>
+          <ul>
+            <li>Conducted research in wireless networks with specialization in C-V2X and NR-V2X communications.</li>
+            <li>Worked on implementation-driven projects involving distributed scheduling, mobility modeling, and AI-based resource allocation.</li>
+            <li>Investigated network slicing, NFV, and radio virtualization for next-generation vehicular networks.</li>
+            <li>Mentored Master’s and Ph.D. students on research design, implementation, and documentation.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>Research Assistant</h3>
+          <div class="meta">Institute of Space Technology, Pakistan | July 2018 – April 2019</div>
+          <ul>
+            <li>Worked on the funded “5G Cognitive Cells Deployment” project supported by the Ministry of Science &amp; Technology, Pakistan.</li>
+            <li>Conducted experimental evaluation using SDRs, GNU Radio, and Linux-based platforms.</li>
+            <li>Implemented and tested radio virtualization using OFDM and FBMC physical layer waveforms.</li>
+            <li>Contributed to software-defined and virtualized RAN research for improved spectrum utilization.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>Teaching Research Associate</h3>
+          <div class="meta">Institute of Space Technology, Pakistan | April 2019 – August 2019</div>
+          <ul>
+            <li>Taught Embedded Systems and Digital Logic Design with hands-on laboratory sessions.</li>
+            <li>Delivered practical instruction on microcontroller programming using C and Assembly.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>Application Design RF Engineer</h3>
+          <div class="meta">Micro Electronics International (Pvt) Ltd., Islamabad, Pakistan | November 2018 – March 2019</div>
+          <ul>
+            <li>Developed SDR-based tactical communication prototypes for defense applications.</li>
+            <li>Configured network routers and radio base stations for field operations.</li>
+            <li>Contributed to technical bidding, tender preparation, compliance specifications, cost estimation, and project documentation.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section class="section" id="publications">
+  <div class="container">
+    <div class="card panel">
+      
+      <h2 class="section-title">Selected Publications</h2>
+      
+      <p class="section-subtitle">
+        Complete List of Publications are available at my 
+        <a href="https://scholar.google.com/citations?hl=en&user=3DnH4_gAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Google Scholar Profile</a>
+      </p>
+
+      <div class="item-list">
+        <div class="item">
+  <h3>
+    Jamshed, M. A., <b>Saad, M. M.</b>, Mohsin, M. A., Kim, D., Dobre, O. A., Yanikomeroglu, H., & Mohjazi, L, 
+    "<b>Net-Zero 6G from Earth to Orbit: Sustainable Design of Integrated Terrestrial and Non-Terrestrial Networks</b>", 
+    IEEE Communications Magazine <span style="color:red;"> (IF 8.3 JCR 7.2%)</span>, 2026.
+  </h3>
+  <a class="publication-link" href="https://arxiv.org/pdf/2510.00678">Publication Link</a>
+</div>
+
+<div class="item">
+  <h3>
+    <b>Saad, M. M.</b>, Tariq, M. A., Ajmal, M., Kim, D., & Srivastava, G., 
+    "<b>Federated multi-agent reinforcement learning for resource allocation in NR-V2X mode 2</b>", 
+    IEEE Internet of Things Journal <span style="color:red;"> (IF 8.9, JCR 4.1%)</span>, 2025.
+  </h3>
+  <a class="publication-link" href="https://ieeexplore.ieee.org/abstract/document/10938993?casa_token=DhTmiQuQmXcAAAAA:3M_3o5mSayZBtGCL3iy-YIlyY6ca_sHaEvh-U70yGz2yg_pNvwJOUgM0aMJT9Wk4JoXonr5FcgY">Publication Link</a>
+</div>
+
+<div class="item">
+  <h3>
+    <b>Saad, M. M.</b>, Jamshed, M. A., Adedamola, A. I., Nauman, A., & Kim, D., 
+    "<b>Twin delayed DDPG (TD3)-based edge server selection for 5G-enabled industrial and C-ITS applications</b>", 
+   IEEE Open Journal of the Communications Society  <span style="color:red;"> (IF 6.1, JCR 12.9%) </span>, 2025.
+  </h3>
+  <a class="publication-link" href="https://ieeexplore.ieee.org/abstract/document/10902580">Publication Link</a>
+</div>
+
+<div class="item">
+  <h3>
+    <b>Saad, M. M.</b>, Jamshed, M. A., Tariq, M. A., Nauman, A., & Kim, D., 
+    "<b>Knowledge-empowered distributed learning platform in internet of unmanned aerial agents to support NR-V2X communication</b>", 
+    IEEE Internet of Things Journal <span style="color:red;"> (IF 8.9, JCR 4.1%) </span>, 2025.
+  </h3>
+  <a class="publication-link" href="https://ieeexplore.ieee.org/abstract/document/10847838?casa_token=SMjL_2HIZ2EAAAAA:1yK7LpOxsva5_dt7mxfx-5RX-wdXULyLsr2QLgctS_64thpAPh01p0rvAEOyHglLBGGiLFQEBNE">Publication Link</a>
+</div>
+
+<div class="item">
+  <h3>
+    Khan, M. T. R., Jembre, Y. Z., <b>Saad, M. M.</b>, Bouk, S. H., Ahmed, S. H., & Kim, D., 
+    "<b>Proactive content retrieval based on value of popularity in content-centric internet of vehicles</b>", 
+    IEEE Transactions on Intelligent Transportation Systems <span style="color:red;"> (IF 8.4, JCR 2.4%.)</span>, 2024.
+  </h3>
+  <a class="publication-link" href="https://ieeexplore.ieee.org/abstract/document/10480920?casa_token=bGO9_OxmHL4AAAAA:1qocKKveFS0Lka2KEnyeg93dPDXVkOtdjopKxhQRPG3nRhJm4OGo44q5XGbilvoOqNrEnrbAOok">Publication Link</a>
+</div>
+
+<div class="item">
+  <h3>
+    <b>Saad, M. M.</b>, Tariq, M. A., Khan, M. T. R., & Kim, D., 
+    "<b>Non-terrestrial networks: An overview of 3GPP release 17 & 18</b>", 
+    IEEE Internet of Things Magazine <span style="color:red;"> </span>, 2024.
+  </h3>
+  <a class="publication-link" href="https://ieeexplore.ieee.org/abstract/document/10397575?casa_token=tok4o5htKfkAAAAA:gRHDamaEHAR-b2Z-OgAk8GF2oq8Gp87skiBZiVejnRBZ9p5IhOAIPVAc0fPD_9tugOOWemoFgRo">Publication Link</a>
+</div>
+
+<div class="item">
+  <h3>
+    <b>Saad, M. M.</b>, Tariq, M. A., Siddiqa, A., & Kim, D., 
+    "<b>Analytical models for distributed resource allocation in NR-V2X mode 2</b>", 
+    IEEE Internet of Things Journal <span style="color:red;"> (IF 8.9, JCR 4.1%) </span>, 2023.
+  </h3>
+  <a class="publication-link" href="https://ieeexplore.ieee.org/abstract/document/10302288?casa_token=XdecKdhykHwAAAAA:9c6YBrutWcdfHglXnrmMWTEunLeYWIY42SqMpD_chp-mWt5Qi21cwSPCIq6986Neu9A_9u-c_gQ">Publication Link</a>
+</div>
+
+<div class="item">
+  <h3>
+    <b>Saad, M. M.</b>, Khan, M. T. R., Srivastava, G., Jhaveri, R. H., Islam, M., & Kim, D., 
+    "<b>Cooperative vehicular networks: An optimal and machine learning approach</b>", 
+    Computers and Electrical Engineering <span style="color:red;"> </span>, 2022.
+  </h3>
+  <a class="publication-link" href="https://www.sciencedirect.com/science/article/pii/S0045790622005675?casa_token=o1tCkc4Z6bEAAAAA:UAf5UzwM9FViJAoSLA4eiSOCL4cztJgxBShp1mnScd0U2C-H0u5UVWhnWSukpS_j6x3zWBE9vrL6">Publication Link</a>
+</div>
+
+<div class="item">
+  <h3>
+    <b>Saad, M. M.</b>, Khan, M. T. R., Shah, S. H. A., & Kim, D., 
+    "<b>Advancements in vehicular communication technologies: C-V2X and NR-V2X comparison</b>", 
+    IEEE Communications Magazine <span style="color:red;"> (IF 8.3 JCR 7.2%) </span>, 2021.
+  </h3>
+  <a class="publication-link" href="https://ieeexplore.ieee.org/abstract/document/9530506?casa_token=7HwhU94wREsAAAAA:FlZugkDY4HjIT38IoZSfn6gR2rJg_YzbwiFonQY5joU0GCwbb3uMdjTCb1F16c55kJdZhqPz2IM">Publication Link</a>
+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="patents">
+  <div class="container">
+    <div class="card panel">
+      <h2 class="section-title">Patents</h2>
+
+      <div class="item-list">
+
+        <!-- Patent 1 -->
+        <div class="item">
+          <div class="meta">
+            Patent No.: 10-2025-0007889 &nbsp;|&nbsp; Filed: Jan 20, 2025
+          </div>
+
+          <h3>Context-Aware Resource Allocation Method and Supporting System</h3>
+
+          <ul>
+            <li>Proposes a context-aware radio resource allocation technique for 5G/6G communication systems.</li>
+            <li>Integrates environmental dynamics, mobility awareness, and traffic density information to enhance allocation decisions.</li>
+            <li>Improves latency, reliability, and spectrum efficiency under highly dynamic connectivity conditions.</li>
+            <li>Applicable to advanced 6G verticals, including cooperative mobility and intelligent wireless networks.</li>
+          </ul>
+        </div>
+
+        <!-- Patent 2 -->
+        <div class="item">
+          <div class="meta">
+            Patent No.: 10-2025-0006853 &nbsp;|&nbsp; Filed: Jan 16, 2025
+          </div>
+
+          <h3>AI-Enabled Onboard Unit for Adaptive Resource Scheduling in NR-V2X Systems</h3>
+
+          <ul>
+            <li>Introduces an AI-enabled Onboard Unit (OBU) architecture for adaptive resource scheduling in NR-based cellular systems.</li>
+            <li>Utilizes LSTM prediction and deep reinforcement learning to estimate traffic demand and optimize radio resource usage in real time.</li>
+            <li>Enables cooperative sensing, prioritizes mission-critical messages, and reduces energy consumption.</li>
+            <li>Designed to support emerging 6G reliability and autonomy requirements.</li>
+          </ul>
+        </div>
+
+        <!-- Patent 3 -->
+        <div class="item">
+          <div class="meta">
+            Patent No.: 10-2024-0011319 &nbsp;|&nbsp; Filed: Oct 2024
+          </div>
+
+          <h3>Device and Method for Transmitting Messages between a Vehicle Terminal and a Wireless Terminal</h3>
+
+          <ul>
+            <li>Enables low-latency and high-accuracy message delivery using direct proximity-based communication.</li>
+            <li>Incorporates GNSS-based positioning and Wi-Fi Aware data sharing to estimate distance between vehicle and pedestrian terminals.</li>
+            <li>Supports safety alerts and cooperative mobility by notifying users within predefined proximity thresholds.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+     <section class="section" id="book-chapters">
+  <div class="container">
+    <div class="card panel">
+      <h2 class="section-title">Book Chapters</h2>
+
+      <div class="item-list">
+
+        <!-- Chapter 1 -->
+        <div class="item">
+          <h3>
+            AI-enabled Dynamic Resource Scheduling in Integrated TN-NTN Systems
+          </h3>
+          <div class="meta">
+            Malik Muhammad Saad, et al. | Springer Nature | Jan 2026
+          </div>
+          <p>
+            In the book: <strong>Artificial Intelligence for Integrated and Non-Terrestrial Networks</strong>
+          </p>
+          <p>
+            <a href="https://link.springer.com/chapter/10.1007/978-3-032-06512-4_5" target="_blank">
+              View Chapter
+            </a>
+          </p>
+        </div>
+
+                <!-- Chapter 3 -->
+        <div class="item">
+          <h3>
+            Achieving Sustainability in IoT Network using Software Defined Radios and Virtualization
+          </h3>
+          <div class="meta">
+             Malik Muhammad Saad, et al. | Elsevier | Oct 2025
+          </div>
+          <p>
+            In the book: <strong>Design and Analysis of Green and Sustainable IoT Technologies for Future Wireless Communications</strong>
+          </p>
+          <p>
+            <a href="https://shop.elsevier.com/books/design-and-analysis-of-green-and-sustainable-iot-technologies-for-future-wireless-communications/jamshed/978-0-443-33000-1" target="_blank">
+              View Chapter
+            </a>
+          </p>
+        </div>
+
+        <!-- Chapter 2 -->
+        <div class="item">
+          <h3>
+            Elevating Connectivity: Integrating Satellite Access Networks in 3GPP NTN Vision
+          </h3>
+          <div class="meta">
+            Malik Muhammad Saad, et al. | Springer Nature |Sep 2024
+          </div>
+          <p>
+            In the book: <strong>Integrated Terrestrial and Non-Terrestrial Networks</strong>
+          </p>
+          <p>
+            <a href="https://link.springer.com/chapter/10.1007/978-3-031-63705-6_8" target="_blank">
+              View Chapter
+            </a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="section" id="projects">
+  <div class="container">
+    <div class="card panel">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="item-list">
+
+        <div class="item">
+          <div class="meta">Kyungpook National University, Korea &amp; University of Glasgow, UK | 2023–2024</div>
+          <h3>AI-Based Congestion Control in NR-V2X MAC Layer</h3>
+          <ul>
+            <li>Designed and implemented a deep reinforcement learning-based resource allocation scheme for congestion control in NR-V2X.</li>
+            <li>Incorporated system-level metrics such as Channel Busy Ratio and Channel Occupancy Ratio, along with application-level Age-of-Information.</li>
+            <li>Optimized transmission rate, power control, and resource reservation intervals to improve throughput and reliability.</li>
+            <li>Aligned the scheduling logic with Qualcomm V2X SDK concepts for Snapdragon SA2150P / SA8155P chipsets, ARM-based SoCs, and QNX-based real-time execution environments.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="meta">Kyungpook National University, Korea &amp; University of Glasgow, UK | 2022–2023</div>
+          <h3>Cooperative Scheduling Framework for 5G NR-V2X</h3>
+          <ul>
+            <li>Evaluated NR-V2X enhancements over legacy C-V2X using a custom NR-V2X simulator developed in ns-3 for sub-6 GHz scenarios.</li>
+            <li>Proposed practical improvements for decentralized resource selection and cooperative MAC-layer scheduling under high-mobility vehicular environments.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="meta">Institute of Space Technology, Pakistan | 2018</div>
+          <h3>SDR-Based Evaluation of Cognitive 5G Cells</h3>
+          <ul>
+            <li>Experimentally validated Software Defined Networking and Network Functions Virtualization for dynamic network slicing.</li>
+            <li>Developed and deployed Virtual Radios using FBMC and OFDM air interfaces for low-latency and high-reliability communication.</li>
+            <li>Conducted full-stack real-time SDR testing using GNU Radio and USRP platforms under Linux.</li>
+            <li>Integrated Python/C++ modules and GNU Radio flowgraphs for performance validation of software-based 5G cognitive cells.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="meta">Institute of Space Technology, Pakistan | 2018</div>
+          <h3>mmWave Backhaul via High-Altitude Platforms (HAP-UAV)</h3>
+          <ul>
+            <li>Engineered backhaul communication links using mmWave 28/31 GHz bands for remote regions in Pakistan.</li>
+            <li>Demonstrated wireless delivery of internet services using UAV-based high-altitude platforms as airborne relays.</li>
+            <li>Validated the feasibility of HAP-based backhaul communication in rural and disaster-prone environments.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+   
+    <section class="section" id="editorial">
+  <div class="container">
+    <div class="card panel">
+      <h2 class="section-title">Editorial Activities</h2>
+
+      <div class="item-list">
+
+        <div class="item">
+          <div class="meta">Lead Guest Editor | IEEE Communications Standards Magazine</div>
+          <h3>Special Issue: Toward 6G NTN-V2X: Architectures, Standardization Roadmap, and AI-Driven Technologies</h3>
+          <p><strong>Status:</strong> Officially accepted and published online in July 2025</p>
+          <p>
+            <strong>Link:</strong>
+            <a href="https://www.comsoc.org/publications/magazines/ieee-communications-standards-magazine/cfp/toward-6g-ntn-v2x-architectures" target="_blank">
+              View Special Issue Online
+            </a>
+          </p>
+          <ul>
+            <li>Led the proposal, coordination, and launch of a feature topic on Non-Terrestrial Networks for V2X.</li>
+            <li>Collaborated with global experts, including contributors from 5GAA and leading research institutes and industries.</li>
+            <li>Managed the editorial process via ScholarOne, organized calls for papers, reviewer invitations, and ensured technical scope alignment with 3GPP standards.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="meta">Lead Guest Editor | Electronics (MDPI) — SCIE Indexed Journal</div>
+          <h3>Special Issue: Wireless Communications for Internet of Things and Vehicular Networks</h3>
+          <p><strong>Status:</strong> Special Issue announced and open for submissions</p>
+          <p>
+            <strong>Link:</strong>
+            <a href="https://www.mdpi.com/journal/electronics/special_issues/0X3770402S" target="_blank">
+              View Special Issue Webpage
+            </a>
+          </p>
+          <ul>
+            <li>Serving as Guest Editor for a special issue focused on IoT connectivity, vehicular networking, and intelligent wireless communication technologies.</li>
+            <li>Overseeing manuscript screening, reviewer assignment, and quality assurance to ensure strong scientific and industrial relevance.</li>
+            <li>Engaging international researchers and practitioners to promote cutting-edge research contributions in IoT-enabled vehicular systems.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="meta">Associate Editor | Engineering Reports (Wiley) — SCIE Indexed Journal</div>
+          <h3>Associate Editor, Engineering Reports</h3>
+          <p>
+            <strong>Link:</strong>
+            <a href="https://onlinelibrary.wiley.com/page/journal/25778196/homepage/editorial-board" target="_blank">
+              View Editorial Board Page
+            </a>
+          </p>
+          <ul>
+            <li>Handling submissions in wireless communications, intelligent networked systems, IoT, cyber-physical systems, and emerging engineering domains.</li>
+            <li>Managing peer-review workflows, reviewer assignments, and rigorous technical evaluation to ensure publication quality.</li>
+            <li>Supporting authors and reviewers through constructive feedback and transparent editorial decision processes.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+        
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="card panel">
+          <h2 class="section-title">Contact</h2>
+          <p>
+            For research collaboration, academic discussion, invited talks, or project opportunities,
+            feel free to contact me through the details below.
+          </p>
+          <div class="contact-list">
+            <div><strong>Email:</strong> <a href="mailto:maliksaad84@gmail.com">maliksaad84@gmail.com</a></div>
+            <div><strong>Phone:</strong> +82 10 6604 9603</div>
+            <div><strong>Location:</strong> South Korea</div>
+          </div>
+        </div>
+
+        <div class="card panel">
+          <h2 class="section-title">Contact Form</h2>
+          <form action="https://formspree.io/f/xojrjbwk" method="POST">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <input type="text" name="subject" placeholder="Subject" required />
+            <textarea name="message" placeholder="Your message" required></textarea>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+          <p class="small-note"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Malik Muhammad Saad. Built for GitHub Pages.
+    </div>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+      toggleButton.textContent = '☀️ Light Mode';
+    }
+
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      toggleButton.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+</body>
+</html>
